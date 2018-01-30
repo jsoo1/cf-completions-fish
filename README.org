@@ -1,0 +1,5 @@
+* Cloud Foundry CLI Completions for Fish Shell
+
+  Currently a bit of a mess of regex that generates the completions. That means that any tab completion lists all 1500 or so options.
+
+  Is it better than nothing? We shall see...
