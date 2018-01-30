@@ -191,11 +191,11 @@ complete -c cf -f -s v -d "Print API request diagnostics to stdout"
 # Long options
 complete -c cf -f -l help -d "Show help"
 # Abbreviated long options
-complete -c cf -s h -d "Show help"
+complete -c cf -f -s h -d "Show help"
 
 # Command: help
 # Short options
-complete -c cf -a help -s a -d "All available CLI commands"
+complete -c cf -a help -f -s a -d "All available CLI commands"
 # Long options
 # Abbreviated long options
 
@@ -206,15 +206,15 @@ complete -c cf -a help -s a -d "All available CLI commands"
 
 # Command: login
 # Short options
-complete -c cf -a login -s a -d "API endpoint (e.g. https://api.example.com)"
-complete -c cf -a login -s o -d "Org"
-complete -c cf -a login -s p -d "Password"
-complete -c cf -a login -s s -d "Space"
-complete -c cf -a login -s u -d "Username"
+complete -c cf -a login -f -s a -d "API endpoint (e.g. https://api.example.com)"
+complete -c cf -a login -f -s o -d "Org"
+complete -c cf -a login -f -s p -d "Password"
+complete -c cf -a login -f -s s -d "Space"
+complete -c cf -a login -f -s u -d "Username"
 # Long options
-complete -c cf -a login -l skip-ssl-validation -d "Skip verification of the API endpoint. Not recommended!"
-complete -c cf -a login -l sso -d "Prompt for a one-time passcode to login"
-complete -c cf -a login -l sso-passcode -d "One-time passcode"
+complete -c cf -f -a login -l skip-ssl-validation -d "Skip verification of the API endpoint. Not recommended!"
+complete -c cf -f -a login -l sso -d "Prompt for a one-time passcode to login"
+complete -c cf -f -a login -l sso-passcode -d "One-time passcode"
 # Abbreviated long options
 
 # Command: logout
@@ -229,16 +229,16 @@ complete -c cf -a login -l sso-passcode -d "One-time passcode"
 
 # Command: target
 # Short options
-complete -c cf -a target -s o -d "Organization"
-complete -c cf -a target -s s -d "Space"
+complete -c cf -a target -f -s o -d "Organization"
+complete -c cf -a target -f -s s -d "Space"
 # Long options
 # Abbreviated long options
 
 # Command: api
 # Short options
 # Long options
-complete -c cf -a api -l skip-ssl-validation -d "Skip verification of the API endpoint. Not recommended!"
-complete -c cf -a api -l unset -d "Remove all api endpoint targeting"
+complete -c cf -f -a api -l skip-ssl-validation -d "Skip verification of the API endpoint. Not recommended!"
+complete -c cf -f -a api -l unset -d "Remove all api endpoint targeting"
 # Abbreviated long options
 
 # Command: auth
@@ -254,50 +254,50 @@ complete -c cf -a api -l unset -d "Remove all api endpoint targeting"
 # Command: app
 # Short options
 # Long options
-complete -c cf -a app -l guid -d "Retrieve and display the given app's guid.  All other health and status output for the app is suppressed."
+complete -c cf -f -a app -l guid -d "Retrieve and display the given app's guid.  All other health and status output for the app is suppressed."
 # Abbreviated long options
 
 # Command: push
 # Short options
-complete -c cf -a push -s b -d "Custom buildpack by name (e.g. my-buildpack) or Git URL (e.g. 'https://github.com/cloudfoundry/java-buildpack.git') or Git URL with a branch or tag (e.g. 'https://github.com/cloudfoundry/java-buildpack.git#v3.3.0' for 'v3.3.0' tag). To use built-in buildpacks only, specify 'default' or 'null'"
-complete -c cf -a push -s c -d "Startup command, set to null to reset to default start command"
-complete -c cf -a push -s d -d "Domain (e.g. example.com)"
-complete -c cf -a push -s f -d "Path to manifest"
-complete -c cf -a push -s i -d "Number of instances"
-complete -c cf -a push -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
-complete -c cf -a push -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
-complete -c cf -a push -s p -d "Path to app directory or to a zip file of the contents of the app directory"
-complete -c cf -a push -s s -d "Stack to use (a stack is a pre-built file system, including an operating system, that can run apps)"
-complete -c cf -a push -s t -d "Time (in seconds) allowed to elapse between starting up an app and the first healthy response from the app"
+complete -c cf -a push -f -s b -d "Custom buildpack by name (e.g. my-buildpack) or Git URL (e.g. 'https://github.com/cloudfoundry/java-buildpack.git') or Git URL with a branch or tag (e.g. 'https://github.com/cloudfoundry/java-buildpack.git#v3.3.0' for 'v3.3.0' tag). To use built-in buildpacks only, specify 'default' or 'null'"
+complete -c cf -a push -f -s c -d "Startup command, set to null to reset to default start command"
+complete -c cf -a push -f -s d -d "Domain (e.g. example.com)"
+complete -c cf -a push -f -s f -d "Path to manifest"
+complete -c cf -a push -f -s i -d "Number of instances"
+complete -c cf -a push -f -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a push -f -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a push -f -s p -d "Path to app directory or to a zip file of the contents of the app directory"
+complete -c cf -a push -f -s s -d "Stack to use (a stack is a pre-built file system, including an operating system, that can run apps)"
+complete -c cf -a push -f -s t -d "Time (in seconds) allowed to elapse between starting up an app and the first healthy response from the app"
 # Long options
-complete -c cf -a push -l docker-image -d "Docker-image to be used (e.g. user/docker-image-name)"
-complete -c cf -a push -l docker-username -d "Repository username; used with password from environment variable CF_DOCKER_PASSWORD"
-complete -c cf -a push -l health-check-type -d "Application health check type (Default: 'port', 'none' accepted for 'process', 'http' implies endpoint '/')"
-complete -c cf -a push -l hostname -d "Hostname (e.g. my-subdomain)"
-complete -c cf -a push -l no-hostname -d "Map the root domain to this app"
-complete -c cf -a push -l no-manifest -d "Ignore manifest file"
-complete -c cf -a push -l no-route -d "Do not map a route to this app and remove routes from previous pushes of this app"
-complete -c cf -a push -l no-start -d "Do not start an app after pushing"
-complete -c cf -a push -l random-route -d "Create a random route for this app"
-complete -c cf -a push -l route-path -d "Path for the route"
+complete -c cf -f -a push -l docker-image -d "Docker-image to be used (e.g. user/docker-image-name)"
+complete -c cf -f -a push -l docker-username -d "Repository username; used with password from environment variable CF_DOCKER_PASSWORD"
+complete -c cf -f -a push -l health-check-type -d "Application health check type (Default: 'port', 'none' accepted for 'process', 'http' implies endpoint '/')"
+complete -c cf -f -a push -l hostname -d "Hostname (e.g. my-subdomain)"
+complete -c cf -f -a push -l no-hostname -d "Map the root domain to this app"
+complete -c cf -f -a push -l no-manifest -d "Ignore manifest file"
+complete -c cf -f -a push -l no-route -d "Do not map a route to this app and remove routes from previous pushes of this app"
+complete -c cf -f -a push -l no-start -d "Do not start an app after pushing"
+complete -c cf -f -a push -l random-route -d "Create a random route for this app"
+complete -c cf -f -a push -l route-path -d "Path for the route"
 # Abbreviated long options
-complete -c cf -a push -a push -s o -d "Docker-image to be used (e.g. user/docker-image-name)"
-complete -c cf -a push -a push -s u -d "Application health check type (Default: 'port', 'none' accepted for 'process', 'http' implies endpoint '/')"
-complete -c cf -a push -a push -s n -d "Hostname (e.g. my-subdomain)"
+complete -c cf -f -a push -a push -s o -d "Docker-image to be used (e.g. user/docker-image-name)"
+complete -c cf -f -a push -a push -s u -d "Application health check type (Default: 'port', 'none' accepted for 'process', 'http' implies endpoint '/')"
+complete -c cf -f -a push -a push -s n -d "Hostname (e.g. my-subdomain)"
 
 # Command: scale
 # Short options
-complete -c cf -a scale -s f -d "Force restart of app without prompt"
-complete -c cf -a scale -s i -d "Number of instances"
-complete -c cf -a scale -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
-complete -c cf -a scale -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a scale -f -s f -d "Force restart of app without prompt"
+complete -c cf -a scale -f -s i -d "Number of instances"
+complete -c cf -a scale -f -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a scale -f -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
 # Long options
 # Abbreviated long options
 
 # Command: delete
 # Short options
-complete -c cf -a delete -s f -d "Force deletion without confirmation"
-complete -c cf -a delete -s r -d "Also delete any mapped routes"
+complete -c cf -a delete -f -s f -d "Force deletion without confirmation"
+complete -c cf -a delete -f -s r -d "Also delete any mapped routes"
 # Long options
 # Abbreviated long options
 
@@ -333,10 +333,10 @@ complete -c cf -a delete -s r -d "Also delete any mapped routes"
 
 # Command: run-task
 # Short options
-complete -c cf -a run-task -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
-complete -c cf -a run-task -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a run-task -f -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a run-task -f -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
 # Long options
-complete -c cf -a run-task -l name -d "Name to give the task (generated if omitted)"
+complete -c cf -f -a run-task -l name -d "Name to give the task (generated if omitted)"
 # Abbreviated long options
 
 # Command: tasks
@@ -356,14 +356,14 @@ complete -c cf -a run-task -l name -d "Name to give the task (generated if omitt
 
 # Command: files
 # Short options
-complete -c cf -a files -s i -d "Instance"
+complete -c cf -a files -f -s i -d "Instance"
 # Long options
 # Abbreviated long options
 
 # Command: logs
 # Short options
 # Long options
-complete -c cf -a logs -l recent -d "Dump recent logs instead of tailing"
+complete -c cf -f -a logs -l recent -d "Dump recent logs instead of tailing"
 # Abbreviated long options
 
 # Command: env
@@ -389,20 +389,20 @@ complete -c cf -a logs -l recent -d "Dump recent logs instead of tailing"
 # Command: stack
 # Short options
 # Long options
-complete -c cf -a stack -l guid -d "Retrieve and display the given stack's guid. All other output for the stack is suppressed."
+complete -c cf -f -a stack -l guid -d "Retrieve and display the given stack's guid. All other output for the stack is suppressed."
 # Abbreviated long options
 
 # Command: copy-source
 # Short options
-complete -c cf -a copy-source -s o -d "Org that contains the target application"
-complete -c cf -a copy-source -s s -d "Space that contains the target application"
+complete -c cf -a copy-source -f -s o -d "Org that contains the target application"
+complete -c cf -a copy-source -f -s s -d "Space that contains the target application"
 # Long options
-complete -c cf -a copy-source -l no-restart -d "Override restart of the application in target environment after copy-source completes"
+complete -c cf -f -a copy-source -l no-restart -d "Override restart of the application in target environment after copy-source completes"
 # Abbreviated long options
 
 # Command: create-app-manifest
 # Short options
-complete -c cf -a create-app-manifest -s p -d "Specify a path for file creation. If path not specified, manifest file is created in current working directory."
+complete -c cf -a create-app-manifest -f -s p -d "Specify a path for file creation. If path not specified, manifest file is created in current working directory."
 # Long options
 # Abbreviated long options
 
@@ -414,7 +414,7 @@ complete -c cf -a create-app-manifest -s p -d "Specify a path for file creation.
 # Command: set-health-check
 # Short options
 # Long options
-complete -c cf -a set-health-check -l endpoint -d "Path on the app (Default: /)"
+complete -c cf -f -a set-health-check -l endpoint -d "Path on the app (Default: /)"
 # Abbreviated long options
 
 # Command: enable-ssh
@@ -434,26 +434,26 @@ complete -c cf -a set-health-check -l endpoint -d "Path on the app (Default: /)"
 
 # Command: ssh
 # Short options
-complete -c cf -a ssh -s L -d "Local port forward specification. This flag can be defined more than once."
+complete -c cf -a ssh -f -s L -d "Local port forward specification. This flag can be defined more than once."
 # Long options
-complete -c cf -a ssh -l app-instance-index -d "Application instance index (Default: 0)"
-complete -c cf -a ssh -l command -d "Command to run. This flag can be defined more than once."
-complete -c cf -a ssh -l disable-pseudo-tty -d "Disable pseudo-tty allocation"
-complete -c cf -a ssh -l force-pseudo-tty -d "Force pseudo-tty allocation"
-complete -c cf -a ssh -l request-pseudo-tty -d "Request pseudo-tty allocation"
-complete -c cf -a ssh -l skip-host-validation -d "Skip host key validation"
-complete -c cf -a ssh -l skip-remote-execution -d "Do not execute a remote command"
+complete -c cf -f -a ssh -l app-instance-index -d "Application instance index (Default: 0)"
+complete -c cf -f -a ssh -l command -d "Command to run. This flag can be defined more than once."
+complete -c cf -f -a ssh -l disable-pseudo-tty -d "Disable pseudo-tty allocation"
+complete -c cf -f -a ssh -l force-pseudo-tty -d "Force pseudo-tty allocation"
+complete -c cf -f -a ssh -l request-pseudo-tty -d "Request pseudo-tty allocation"
+complete -c cf -f -a ssh -l skip-host-validation -d "Skip host key validation"
+complete -c cf -f -a ssh -l skip-remote-execution -d "Do not execute a remote command"
 # Abbreviated long options
-complete -c cf -a push -a ssh -s i -d "Application instance index (Default: 0)"
-complete -c cf -a push -a ssh -s c -d "Command to run. This flag can be defined more than once."
-complete -c cf -a push -a ssh -s T -d "Disable pseudo-tty allocation"
-complete -c cf -a push -a ssh -s t -d "Request pseudo-tty allocation"
-complete -c cf -a push -a ssh -s k -d "Skip host key validation"
-complete -c cf -a push -a ssh -s N -d "Do not execute a remote command"
+complete -c cf -f -a push -a ssh -s i -d "Application instance index (Default: 0)"
+complete -c cf -f -a push -a ssh -s c -d "Command to run. This flag can be defined more than once."
+complete -c cf -f -a push -a ssh -s T -d "Disable pseudo-tty allocation"
+complete -c cf -f -a push -a ssh -s t -d "Request pseudo-tty allocation"
+complete -c cf -f -a push -a ssh -s k -d "Skip host key validation"
+complete -c cf -f -a push -a ssh -s N -d "Do not execute a remote command"
 
 # Command: marketplace
 # Short options
-complete -c cf -a marketplace -s s -d "Show plan details for a particular service offering"
+complete -c cf -a marketplace -f -s s -d "Show plan details for a particular service offering"
 # Long options
 # Abbreviated long options
 
@@ -465,27 +465,27 @@ complete -c cf -a marketplace -s s -d "Show plan details for a particular servic
 # Command: service
 # Short options
 # Long options
-complete -c cf -a service -l guid -d "Retrieve and display the given service's guid. All other output for the service is suppressed."
+complete -c cf -f -a service -l guid -d "Retrieve and display the given service's guid. All other output for the service is suppressed."
 # Abbreviated long options
 
 # Command: create-service
 # Short options
-complete -c cf -a create-service -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
-complete -c cf -a create-service -s t -d "User provided tags"
+complete -c cf -a create-service -f -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
+complete -c cf -a create-service -f -s t -d "User provided tags"
 # Long options
 # Abbreviated long options
 
 # Command: update-service
 # Short options
-complete -c cf -a update-service -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
-complete -c cf -a update-service -s p -d "Change service plan for a service instance"
-complete -c cf -a update-service -s t -d "User provided tags"
+complete -c cf -a update-service -f -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
+complete -c cf -a update-service -f -s p -d "Change service plan for a service instance"
+complete -c cf -a update-service -f -s t -d "User provided tags"
 # Long options
 # Abbreviated long options
 
 # Command: delete-service
 # Short options
-complete -c cf -a delete-service -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-service -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -496,7 +496,7 @@ complete -c cf -a delete-service -s f -d "Force deletion without confirmation"
 
 # Command: create-service-key
 # Short options
-complete -c cf -a create-service-key -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
+complete -c cf -a create-service-key -f -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
 # Long options
 # Abbreviated long options
 
@@ -508,18 +508,18 @@ complete -c cf -a create-service-key -s c -d "Valid JSON object containing servi
 # Command: service-key
 # Short options
 # Long options
-complete -c cf -a service-key -l guid -d "Retrieve and display the given service-key's guid.  All other output for the service is suppressed."
+complete -c cf -f -a service-key -l guid -d "Retrieve and display the given service-key's guid.  All other output for the service is suppressed."
 # Abbreviated long options
 
 # Command: delete-service-key
 # Short options
-complete -c cf -a delete-service-key -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-service-key -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: bind-service
 # Short options
-complete -c cf -a bind-service -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
+complete -c cf -a bind-service -f -s c -d "Valid JSON object containing service-specific configuration parameters, provided either in-line or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
 # Long options
 # Abbreviated long options
 
@@ -530,35 +530,35 @@ complete -c cf -a bind-service -s c -d "Valid JSON object containing service-spe
 
 # Command: bind-route-service
 # Short options
-complete -c cf -a bind-route-service -s c -d "Valid JSON object containing service-specific configuration parameters, provided inline or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
+complete -c cf -a bind-route-service -f -s c -d "Valid JSON object containing service-specific configuration parameters, provided inline or in a file. For a list of supported configuration parameters, see documentation for the particular service offering."
 # Long options
-complete -c cf -a bind-route-service -l hostname -d "Hostname used in combination with DOMAIN to specify the route to bind"
-complete -c cf -a bind-route-service -l path -d "Path used in combination with HOSTNAME and DOMAIN to specify the route to bind"
+complete -c cf -f -a bind-route-service -l hostname -d "Hostname used in combination with DOMAIN to specify the route to bind"
+complete -c cf -f -a bind-route-service -l path -d "Path used in combination with HOSTNAME and DOMAIN to specify the route to bind"
 # Abbreviated long options
-complete -c cf -a push -a bind-route-service -s n -d "Hostname used in combination with DOMAIN to specify the route to bind"
+complete -c cf -f -a push -a bind-route-service -s n -d "Hostname used in combination with DOMAIN to specify the route to bind"
 
 # Command: unbind-route-service
 # Short options
-complete -c cf -a unbind-route-service -s f -d "Force unbinding without confirmation"
+complete -c cf -a unbind-route-service -f -s f -d "Force unbinding without confirmation"
 # Long options
-complete -c cf -a unbind-route-service -l hostname -d "Hostname used in combination with DOMAIN to specify the route to unbind"
-complete -c cf -a unbind-route-service -l path -d "Path used in combination with HOSTNAME and DOMAIN to specify the route to unbind"
+complete -c cf -f -a unbind-route-service -l hostname -d "Hostname used in combination with DOMAIN to specify the route to unbind"
+complete -c cf -f -a unbind-route-service -l path -d "Path used in combination with HOSTNAME and DOMAIN to specify the route to unbind"
 # Abbreviated long options
-complete -c cf -a push -a unbind-route-service -s n -d "Hostname used in combination with DOMAIN to specify the route to unbind"
+complete -c cf -f -a push -a unbind-route-service -s n -d "Hostname used in combination with DOMAIN to specify the route to unbind"
 
 # Command: create-user-provided-service
 # Short options
-complete -c cf -a create-user-provided-service -s l -d "URL to which logs for bound applications will be streamed"
-complete -c cf -a create-user-provided-service -s p -d "Credentials, provided inline or in a file, to be exposed in the VCAP_SERVICES environment variable for bound applications"
-complete -c cf -a create-user-provided-service -s r -d "URL to which requests for bound routes will be forwarded. Scheme for this URL must be https"
+complete -c cf -a create-user-provided-service -f -s l -d "URL to which logs for bound applications will be streamed"
+complete -c cf -a create-user-provided-service -f -s p -d "Credentials, provided inline or in a file, to be exposed in the VCAP_SERVICES environment variable for bound applications"
+complete -c cf -a create-user-provided-service -f -s r -d "URL to which requests for bound routes will be forwarded. Scheme for this URL must be https"
 # Long options
 # Abbreviated long options
 
 # Command: update-user-provided-service
 # Short options
-complete -c cf -a update-user-provided-service -s l -d "URL to which logs for bound applications will be streamed"
-complete -c cf -a update-user-provided-service -s p -d "Credentials, provided inline or in a file, to be exposed in the VCAP_SERVICES environment variable for bound applications"
-complete -c cf -a update-user-provided-service -s r -d "URL to which requests for bound routes will be forwarded. Scheme for this URL must be https"
+complete -c cf -a update-user-provided-service -f -s l -d "URL to which logs for bound applications will be streamed"
+complete -c cf -a update-user-provided-service -f -s p -d "Credentials, provided inline or in a file, to be exposed in the VCAP_SERVICES environment variable for bound applications"
+complete -c cf -a update-user-provided-service -f -s r -d "URL to which requests for bound routes will be forwarded. Scheme for this URL must be https"
 # Long options
 # Abbreviated long options
 
@@ -570,18 +570,18 @@ complete -c cf -a update-user-provided-service -s r -d "URL to which requests fo
 # Command: org
 # Short options
 # Long options
-complete -c cf -a org -l guid -d "Retrieve and display the given org's guid.  All other output for the org is suppressed."
+complete -c cf -f -a org -l guid -d "Retrieve and display the given org's guid.  All other output for the org is suppressed."
 # Abbreviated long options
 
 # Command: create-org
 # Short options
-complete -c cf -a create-org -s q -d "Quota to assign to the newly created org (excluding this option results in assignment of default quota)"
+complete -c cf -a create-org -f -s q -d "Quota to assign to the newly created org (excluding this option results in assignment of default quota)"
 # Long options
 # Abbreviated long options
 
 # Command: delete-org
 # Short options
-complete -c cf -a delete-org -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-org -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -598,21 +598,21 @@ complete -c cf -a delete-org -s f -d "Force deletion without confirmation"
 # Command: space
 # Short options
 # Long options
-complete -c cf -a space -l guid -d "Retrieve and display the given space's guid.  All other output for the space is suppressed."
-complete -c cf -a space -l security-group-rules -d "Retrieve the rules for all the security groups associated with the space."
+complete -c cf -f -a space -l guid -d "Retrieve and display the given space's guid.  All other output for the space is suppressed."
+complete -c cf -f -a space -l security-group-rules -d "Retrieve the rules for all the security groups associated with the space."
 # Abbreviated long options
 
 # Command: create-space
 # Short options
-complete -c cf -a create-space -s o -d "Organization"
-complete -c cf -a create-space -s q -d "Quota to assign to the newly created space"
+complete -c cf -a create-space -f -s o -d "Organization"
+complete -c cf -a create-space -f -s q -d "Quota to assign to the newly created space"
 # Long options
 # Abbreviated long options
 
 # Command: delete-space
 # Short options
-complete -c cf -a delete-space -s f -d "Force deletion without confirmation"
-complete -c cf -a delete-space -s o -d "Delete space within specified org"
+complete -c cf -a delete-space -f -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-space -f -s o -d "Delete space within specified org"
 # Long options
 # Abbreviated long options
 
@@ -648,19 +648,19 @@ complete -c cf -a delete-space -s o -d "Delete space within specified org"
 
 # Command: delete-domain
 # Short options
-complete -c cf -a delete-domain -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-domain -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: create-shared-domain
 # Short options
 # Long options
-complete -c cf -a create-shared-domain -l router-group -d "Routes for this domain will be configured only on the specified router group"
+complete -c cf -f -a create-shared-domain -l router-group -d "Routes for this domain will be configured only on the specified router group"
 # Abbreviated long options
 
 # Command: delete-shared-domain
 # Short options
-complete -c cf -a delete-shared-domain -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-shared-domain -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -672,80 +672,80 @@ complete -c cf -a delete-shared-domain -s f -d "Force deletion without confirmat
 # Command: routes
 # Short options
 # Long options
-complete -c cf -a routes -l orglevel -d "List all the routes for all spaces of current organization"
+complete -c cf -f -a routes -l orglevel -d "List all the routes for all spaces of current organization"
 # Abbreviated long options
 
 # Command: create-route
 # Short options
 # Long options
-complete -c cf -a create-route -l hostname -d "Hostname for the HTTP route (required for shared domains)"
-complete -c cf -a create-route -l path -d "Path for the HTTP route"
-complete -c cf -a create-route -l port -d "Port for the TCP route"
-complete -c cf -a create-route -l random-port -d "Create a random port for the TCP route"
+complete -c cf -f -a create-route -l hostname -d "Hostname for the HTTP route (required for shared domains)"
+complete -c cf -f -a create-route -l path -d "Path for the HTTP route"
+complete -c cf -f -a create-route -l port -d "Port for the TCP route"
+complete -c cf -f -a create-route -l random-port -d "Create a random port for the TCP route"
 # Abbreviated long options
-complete -c cf -a push -a create-route -s n -d "Hostname for the HTTP route (required for shared domains)"
+complete -c cf -f -a push -a create-route -s n -d "Hostname for the HTTP route (required for shared domains)"
 
 # Command: check-route
 # Short options
 # Long options
-complete -c cf -a check-route -l path -d "Path for the route"
+complete -c cf -f -a check-route -l path -d "Path for the route"
 # Abbreviated long options
 
 # Command: map-route
 # Short options
 # Long options
-complete -c cf -a map-route -l hostname -d "Hostname for the HTTP route (required for shared domains)"
-complete -c cf -a map-route -l path -d "Path for the HTTP route"
-complete -c cf -a map-route -l port -d "Port for the TCP route"
-complete -c cf -a map-route -l random-port -d "Create a random port for the TCP route"
+complete -c cf -f -a map-route -l hostname -d "Hostname for the HTTP route (required for shared domains)"
+complete -c cf -f -a map-route -l path -d "Path for the HTTP route"
+complete -c cf -f -a map-route -l port -d "Port for the TCP route"
+complete -c cf -f -a map-route -l random-port -d "Create a random port for the TCP route"
 # Abbreviated long options
-complete -c cf -a push -a map-route -s n -d "Hostname for the HTTP route (required for shared domains)"
+complete -c cf -f -a push -a map-route -s n -d "Hostname for the HTTP route (required for shared domains)"
 
 # Command: unmap-route
 # Short options
 # Long options
-complete -c cf -a unmap-route -l hostname -d "Hostname used to identify the HTTP route"
-complete -c cf -a unmap-route -l path -d "Path used to identify the HTTP route"
-complete -c cf -a unmap-route -l port -d "Port used to identify the TCP route"
+complete -c cf -f -a unmap-route -l hostname -d "Hostname used to identify the HTTP route"
+complete -c cf -f -a unmap-route -l path -d "Path used to identify the HTTP route"
+complete -c cf -f -a unmap-route -l port -d "Port used to identify the TCP route"
 # Abbreviated long options
-complete -c cf -a push -a unmap-route -s n -d "Hostname used to identify the HTTP route"
+complete -c cf -f -a push -a unmap-route -s n -d "Hostname used to identify the HTTP route"
 
 # Command: delete-route
 # Short options
-complete -c cf -a delete-route -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-route -f -s f -d "Force deletion without confirmation"
 # Long options
-complete -c cf -a delete-route -l hostname -d "Hostname used to identify the HTTP route"
-complete -c cf -a delete-route -l path -d "Path used to identify the HTTP route"
-complete -c cf -a delete-route -l port -d "Port used to identify the TCP route"
+complete -c cf -f -a delete-route -l hostname -d "Hostname used to identify the HTTP route"
+complete -c cf -f -a delete-route -l path -d "Path used to identify the HTTP route"
+complete -c cf -f -a delete-route -l port -d "Port used to identify the TCP route"
 # Abbreviated long options
-complete -c cf -a push -a delete-route -s n -d "Hostname used to identify the HTTP route"
+complete -c cf -f -a push -a delete-route -s n -d "Hostname used to identify the HTTP route"
 
 # Command: delete-orphaned-routes
 # Short options
-complete -c cf -a delete-orphaned-routes -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-orphaned-routes -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: network-policies
 # Short options
 # Long options
-complete -c cf -a network-policies -l source -d "Source app to filter results by"
+complete -c cf -f -a network-policies -l source -d "Source app to filter results by"
 # Abbreviated long options
 
 # Command: add-network-policy
 # Short options
 # Long options
-complete -c cf -a add-network-policy -l destination-app -d "Name of app to connect to"
-complete -c cf -a add-network-policy -l port -d "Port or range of ports for connection to destination app (Default: 8080)"
-complete -c cf -a add-network-policy -l protocol -d "Protocol to connect apps with (Default: tcp)"
+complete -c cf -f -a add-network-policy -l destination-app -d "Name of app to connect to"
+complete -c cf -f -a add-network-policy -l port -d "Port or range of ports for connection to destination app (Default: 8080)"
+complete -c cf -f -a add-network-policy -l protocol -d "Protocol to connect apps with (Default: tcp)"
 # Abbreviated long options
 
 # Command: remove-network-policy
 # Short options
 # Long options
-complete -c cf -a remove-network-policy -l destination-app -d "Name of app to connect to"
-complete -c cf -a remove-network-policy -l port -d "Port or range of ports that destination app is connected with"
-complete -c cf -a remove-network-policy -l protocol -d "Protocol that apps are connected with"
+complete -c cf -f -a remove-network-policy -l destination-app -d "Name of app to connect to"
+complete -c cf -f -a remove-network-policy -l port -d "Port or range of ports that destination app is connected with"
+complete -c cf -f -a remove-network-policy -l protocol -d "Protocol that apps are connected with"
 # Abbreviated long options
 
 # Command: buildpacks
@@ -756,19 +756,19 @@ complete -c cf -a remove-network-policy -l protocol -d "Protocol that apps are c
 # Command: create-buildpack
 # Short options
 # Long options
-complete -c cf -a create-buildpack -l disable -d "Disable the buildpack from being used for staging"
-complete -c cf -a create-buildpack -l enable -d "Enable the buildpack to be used for staging"
+complete -c cf -f -a create-buildpack -l disable -d "Disable the buildpack from being used for staging"
+complete -c cf -f -a create-buildpack -l enable -d "Enable the buildpack to be used for staging"
 # Abbreviated long options
 
 # Command: update-buildpack
 # Short options
-complete -c cf -a update-buildpack -s i -d "The order in which the buildpacks are checked during buildpack auto-detection"
-complete -c cf -a update-buildpack -s p -d "Path to directory or zip file"
+complete -c cf -a update-buildpack -f -s i -d "The order in which the buildpacks are checked during buildpack auto-detection"
+complete -c cf -a update-buildpack -f -s p -d "Path to directory or zip file"
 # Long options
-complete -c cf -a update-buildpack -l disable -d "Disable the buildpack from being used for staging"
-complete -c cf -a update-buildpack -l enable -d "Enable the buildpack to be used for staging"
-complete -c cf -a update-buildpack -l lock -d "Lock the buildpack to prevent updates"
-complete -c cf -a update-buildpack -l unlock -d "Unlock the buildpack to enable updates"
+complete -c cf -f -a update-buildpack -l disable -d "Disable the buildpack from being used for staging"
+complete -c cf -f -a update-buildpack -l enable -d "Enable the buildpack to be used for staging"
+complete -c cf -f -a update-buildpack -l lock -d "Lock the buildpack to prevent updates"
+complete -c cf -f -a update-buildpack -l unlock -d "Unlock the buildpack to enable updates"
 # Abbreviated long options
 
 # Command: rename-buildpack
@@ -778,25 +778,25 @@ complete -c cf -a update-buildpack -l unlock -d "Unlock the buildpack to enable 
 
 # Command: delete-buildpack
 # Short options
-complete -c cf -a delete-buildpack -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-buildpack -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: create-user
 # Short options
 # Long options
-complete -c cf -a create-user -l origin -d "Origin for mapping a user account to a user in an external identity provider"
+complete -c cf -f -a create-user -l origin -d "Origin for mapping a user account to a user in an external identity provider"
 # Abbreviated long options
 
 # Command: delete-user
 # Short options
-complete -c cf -a delete-user -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-user -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: org-users
 # Short options
-complete -c cf -a org-users -s a -d "List all users in the org"
+complete -c cf -a org-users -f -s a -d "List all users in the org"
 # Long options
 # Abbreviated long options
 
@@ -842,34 +842,34 @@ complete -c cf -a org-users -s a -d "List all users in the org"
 
 # Command: create-quota
 # Short options
-complete -c cf -a create-quota -s a -d "Total number of application instances. -1 represents an unlimited amount. (Default: unlimited)"
-complete -c cf -a create-quota -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G). -1 represents an unlimited amount."
-complete -c cf -a create-quota -s m -d "Total amount of memory a space can have (e.g. 1024M, 1G, 10G)"
-complete -c cf -a create-quota -s r -d "Total number of routes"
-complete -c cf -a create-quota -s s -d "Total number of service instances"
+complete -c cf -a create-quota -f -s a -d "Total number of application instances. -1 represents an unlimited amount. (Default: unlimited)"
+complete -c cf -a create-quota -f -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G). -1 represents an unlimited amount."
+complete -c cf -a create-quota -f -s m -d "Total amount of memory a space can have (e.g. 1024M, 1G, 10G)"
+complete -c cf -a create-quota -f -s r -d "Total number of routes"
+complete -c cf -a create-quota -f -s s -d "Total number of service instances"
 # Long options
-complete -c cf -a create-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans"
-complete -c cf -a create-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports (Default: 0)"
+complete -c cf -f -a create-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans"
+complete -c cf -f -a create-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports (Default: 0)"
 # Abbreviated long options
 
 # Command: delete-quota
 # Short options
-complete -c cf -a delete-quota -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-quota -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: update-quota
 # Short options
-complete -c cf -a update-quota -s a -d "Total number of application instances. -1 represents an unlimited amount."
-complete -c cf -a update-quota -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G)"
-complete -c cf -a update-quota -s m -d "Total amount of memory (e.g. 1024M, 1G, 10G)"
-complete -c cf -a update-quota -s n -d "New name"
-complete -c cf -a update-quota -s r -d "Total number of routes"
-complete -c cf -a update-quota -s s -d "Total number of service instances"
+complete -c cf -a update-quota -f -s a -d "Total number of application instances. -1 represents an unlimited amount."
+complete -c cf -a update-quota -f -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G)"
+complete -c cf -a update-quota -f -s m -d "Total amount of memory (e.g. 1024M, 1G, 10G)"
+complete -c cf -a update-quota -f -s n -d "New name"
+complete -c cf -a update-quota -f -s r -d "Total number of routes"
+complete -c cf -a update-quota -f -s s -d "Total number of service instances"
 # Long options
-complete -c cf -a update-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans"
-complete -c cf -a update-quota -l disallow-paid-service-plans -d "Cannot provision instances of paid service plans"
-complete -c cf -a update-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports"
+complete -c cf -f -a update-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans"
+complete -c cf -f -a update-quota -l disallow-paid-service-plans -d "Cannot provision instances of paid service plans"
+complete -c cf -f -a update-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports"
 # Abbreviated long options
 
 # Command: share-private-domain
@@ -894,33 +894,33 @@ complete -c cf -a update-quota -l reserved-route-ports -d "Maximum number of rou
 
 # Command: create-space-quota
 # Short options
-complete -c cf -a create-space-quota -s a -d "Total number of application instances. -1 represents an unlimited amount. (Default: unlimited)"
-complete -c cf -a create-space-quota -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G). -1 represents an unlimited amount. (Default: unlimited)"
-complete -c cf -a create-space-quota -s m -d "Total amount of memory a space can have (e.g. 1024M, 1G, 10G)"
-complete -c cf -a create-space-quota -s r -d "Total number of routes"
-complete -c cf -a create-space-quota -s s -d "Total number of service instances"
+complete -c cf -a create-space-quota -f -s a -d "Total number of application instances. -1 represents an unlimited amount. (Default: unlimited)"
+complete -c cf -a create-space-quota -f -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G). -1 represents an unlimited amount. (Default: unlimited)"
+complete -c cf -a create-space-quota -f -s m -d "Total amount of memory a space can have (e.g. 1024M, 1G, 10G)"
+complete -c cf -a create-space-quota -f -s r -d "Total number of routes"
+complete -c cf -a create-space-quota -f -s s -d "Total number of service instances"
 # Long options
-complete -c cf -a create-space-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans (Default: disallowed)"
-complete -c cf -a create-space-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports (Default: 0)"
+complete -c cf -f -a create-space-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans (Default: disallowed)"
+complete -c cf -f -a create-space-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports (Default: 0)"
 # Abbreviated long options
 
 # Command: update-space-quota
 # Short options
-complete -c cf -a update-space-quota -s a -d "Total number of application instances. -1 represents an unlimited amount."
-complete -c cf -a update-space-quota -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G). -1 represents an unlimited amount."
-complete -c cf -a update-space-quota -s m -d "Total amount of memory a space can have (e.g. 1024M, 1G, 10G)"
-complete -c cf -a update-space-quota -s n -d "New name"
-complete -c cf -a update-space-quota -s r -d "Total number of routes"
-complete -c cf -a update-space-quota -s s -d "Total number of service instances"
+complete -c cf -a update-space-quota -f -s a -d "Total number of application instances. -1 represents an unlimited amount."
+complete -c cf -a update-space-quota -f -s i -d "Maximum amount of memory an application instance can have (e.g. 1024M, 1G, 10G). -1 represents an unlimited amount."
+complete -c cf -a update-space-quota -f -s m -d "Total amount of memory a space can have (e.g. 1024M, 1G, 10G)"
+complete -c cf -a update-space-quota -f -s n -d "New name"
+complete -c cf -a update-space-quota -f -s r -d "Total number of routes"
+complete -c cf -a update-space-quota -f -s s -d "Total number of service instances"
 # Long options
-complete -c cf -a update-space-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans"
-complete -c cf -a update-space-quota -l disallow-paid-service-plans -d "Can not provision instances of paid service plans"
-complete -c cf -a update-space-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports"
+complete -c cf -f -a update-space-quota -l allow-paid-service-plans -d "Can provision instances of paid service plans"
+complete -c cf -f -a update-space-quota -l disallow-paid-service-plans -d "Can not provision instances of paid service plans"
+complete -c cf -f -a update-space-quota -l reserved-route-ports -d "Maximum number of routes that may be created with reserved ports"
 # Abbreviated long options
 
 # Command: delete-space-quota
 # Short options
-complete -c cf -a delete-space-quota -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-space-quota -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -951,7 +951,7 @@ complete -c cf -a delete-space-quota -s f -d "Force deletion without confirmatio
 
 # Command: delete-service-auth-token
 # Short options
-complete -c cf -a delete-service-auth-token -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-service-auth-token -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -963,7 +963,7 @@ complete -c cf -a delete-service-auth-token -s f -d "Force deletion without conf
 # Command: create-service-broker
 # Short options
 # Long options
-complete -c cf -a create-service-broker -l space-scoped -d "Make the broker's service plans only visible within the targeted space"
+complete -c cf -f -a create-service-broker -l space-scoped -d "Make the broker's service plans only visible within the targeted space"
 # Abbreviated long options
 
 # Command: update-service-broker
@@ -973,7 +973,7 @@ complete -c cf -a create-service-broker -l space-scoped -d "Make the broker's se
 
 # Command: delete-service-broker
 # Short options
-complete -c cf -a delete-service-broker -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-service-broker -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -984,42 +984,42 @@ complete -c cf -a delete-service-broker -s f -d "Force deletion without confirma
 
 # Command: migrate-service-instances
 # Short options
-complete -c cf -a migrate-service-instances -s f -d "Force migration without confirmation"
+complete -c cf -a migrate-service-instances -f -s f -d "Force migration without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: purge-service-offering
 # Short options
-complete -c cf -a purge-service-offering -s f -d "Force deletion without confirmation"
-complete -c cf -a purge-service-offering -s p -d "Provider"
+complete -c cf -a purge-service-offering -f -s f -d "Force deletion without confirmation"
+complete -c cf -a purge-service-offering -f -s p -d "Provider"
 # Long options
 # Abbreviated long options
 
 # Command: purge-service-instance
 # Short options
-complete -c cf -a purge-service-instance -s f -d "Force deletion without confirmation"
+complete -c cf -a purge-service-instance -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: service-access
 # Short options
-complete -c cf -a service-access -s b -d "Access for plans of a particular broker"
-complete -c cf -a service-access -s e -d "Access for service name of a particular service offering"
-complete -c cf -a service-access -s o -d "Plans accessible by a particular organization"
+complete -c cf -a service-access -f -s b -d "Access for plans of a particular broker"
+complete -c cf -a service-access -f -s e -d "Access for service name of a particular service offering"
+complete -c cf -a service-access -f -s o -d "Plans accessible by a particular organization"
 # Long options
 # Abbreviated long options
 
 # Command: enable-service-access
 # Short options
-complete -c cf -a enable-service-access -s o -d "Enable access for a specified organization"
-complete -c cf -a enable-service-access -s p -d "Enable access to a specified service plan"
+complete -c cf -a enable-service-access -f -s o -d "Enable access for a specified organization"
+complete -c cf -a enable-service-access -f -s p -d "Enable access to a specified service plan"
 # Long options
 # Abbreviated long options
 
 # Command: disable-service-access
 # Short options
-complete -c cf -a disable-service-access -s o -d "Disable access for a specified organization"
-complete -c cf -a disable-service-access -s p -d "Disable access to a specified service plan"
+complete -c cf -a disable-service-access -f -s o -d "Disable access for a specified organization"
+complete -c cf -a disable-service-access -f -s p -d "Disable access to a specified service plan"
 # Long options
 # Abbreviated long options
 
@@ -1045,20 +1045,20 @@ complete -c cf -a disable-service-access -s p -d "Disable access to a specified 
 
 # Command: delete-security-group
 # Short options
-complete -c cf -a delete-security-group -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-security-group -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
 # Command: bind-security-group
 # Short options
 # Long options
-complete -c cf -a bind-security-group -l lifecycle -d "Lifecycle phase the group applies to (Default: running)"
+complete -c cf -f -a bind-security-group -l lifecycle -d "Lifecycle phase the group applies to (Default: running)"
 # Abbreviated long options
 
 # Command: unbind-security-group
 # Short options
 # Long options
-complete -c cf -a unbind-security-group -l lifecycle -d "Lifecycle phase the group applies to (Default: running)"
+complete -c cf -f -a unbind-security-group -l lifecycle -d "Lifecycle phase the group applies to (Default: running)"
 # Abbreviated long options
 
 # Command: bind-staging-security-group
@@ -1123,7 +1123,7 @@ complete -c cf -a unbind-security-group -l lifecycle -d "Lifecycle phase the gro
 
 # Command: delete-isolation-segment
 # Short options
-complete -c cf -a delete-isolation-segment -s f -d "Force deletion without confirmation"
+complete -c cf -a delete-isolation-segment -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -1179,21 +1179,21 @@ complete -c cf -a delete-isolation-segment -s f -d "Force deletion without confi
 
 # Command: curl
 # Short options
-complete -c cf -a curl -s H -d "Custom headers to include in the request, flag can be specified multiple times"
-complete -c cf -a curl -s X -d "HTTP method (GET,POST,PUT,DELETE,etc)"
-complete -c cf -a curl -s d -d "HTTP data to include in the request body, or '@' followed by a file name to read the data from"
-complete -c cf -a curl -s i -d "Include response headers in the output"
+complete -c cf -a curl -f -s H -d "Custom headers to include in the request, flag can be specified multiple times"
+complete -c cf -a curl -f -s X -d "HTTP method (GET,POST,PUT,DELETE,etc)"
+complete -c cf -a curl -f -s d -d "HTTP data to include in the request body, or '@' followed by a file name to read the data from"
+complete -c cf -a curl -f -s i -d "Include response headers in the output"
 # Long options
-complete -c cf -a curl -l output -d "Write curl body to FILE instead of stdout"
+complete -c cf -f -a curl -l output -d "Write curl body to FILE instead of stdout"
 # Abbreviated long options
 
 # Command: config
 # Short options
 # Long options
-complete -c cf -a config -l async-timeout -d "Timeout for async HTTP requests"
-complete -c cf -a config -l color -d "Enable or disable color"
-complete -c cf -a config -l locale -d "Set default locale. If LOCALE is 'CLEAR', previous locale is deleted."
-complete -c cf -a config -l trace -d "Trace HTTP requests"
+complete -c cf -f -a config -l async-timeout -d "Timeout for async HTTP requests"
+complete -c cf -f -a config -l color -d "Enable or disable color"
+complete -c cf -f -a config -l locale -d "Set default locale. If LOCALE is 'CLEAR', previous locale is deleted."
+complete -c cf -f -a config -l trace -d "Trace HTTP requests"
 # Abbreviated long options
 
 # Command: oauth-token
@@ -1223,21 +1223,21 @@ complete -c cf -a config -l trace -d "Trace HTTP requests"
 
 # Command: repo-plugins
 # Short options
-complete -c cf -a repo-plugins -s r -d "Name of a registered repository"
+complete -c cf -a repo-plugins -f -s r -d "Name of a registered repository"
 # Long options
 # Abbreviated long options
 
 # Command: plugins
 # Short options
 # Long options
-complete -c cf -a plugins -l checksum -d "Compute and show the sha1 value of the plugin binary file"
-complete -c cf -a plugins -l outdated -d "Search the plugin repositories for new versions of installed plugins"
+complete -c cf -f -a plugins -l checksum -d "Compute and show the sha1 value of the plugin binary file"
+complete -c cf -f -a plugins -l outdated -d "Search the plugin repositories for new versions of installed plugins"
 # Abbreviated long options
 
 # Command: install-plugin
 # Short options
-complete -c cf -a install-plugin -s f -d "Force install of plugin without confirmation"
-complete -c cf -a install-plugin -s r -d "Restrict search for plugin to this registered repository"
+complete -c cf -a install-plugin -f -s f -d "Force install of plugin without confirmation"
+complete -c cf -a install-plugin -f -s r -d "Restrict search for plugin to this registered repository"
 # Long options
 # Abbreviated long options
 
@@ -1254,40 +1254,40 @@ complete -c cf -a install-plugin -s r -d "Restrict search for plugin to this reg
 # Command: v3-app
 # Short options
 # Long options
-complete -c cf -a v3-app -l guid -d "Retrieve and display the given app's guid.  All other health and status output for the app is suppressed."
+complete -c cf -f -a v3-app -l guid -d "Retrieve and display the given app's guid.  All other health and status output for the app is suppressed."
 # Abbreviated long options
 
 # Command: v3-create-app
 # Short options
 # Long options
-complete -c cf -a v3-create-app -l app-type -d "App lifecycle type to stage and run the app (Default: buildpack)"
+complete -c cf -f -a v3-create-app -l app-type -d "App lifecycle type to stage and run the app (Default: buildpack)"
 # Abbreviated long options
 
 # Command: v3-push
 # Short options
-complete -c cf -a v3-push -s b -d "Custom buildpack by name (e.g. my-buildpack) or Git URL (e.g. 'https://github.com/cloudfoundry/java-buildpack.git') or Git URL with a branch or tag (e.g. 'https://github.com/cloudfoundry/java-buildpack.git#v3.3.0' for 'v3.3.0' tag). To use built-in buildpacks only, specify 'default' or 'null'"
-complete -c cf -a v3-push -s p -d "Path to app directory or to a zip file of the contents of the app directory"
+complete -c cf -a v3-push -f -s b -d "Custom buildpack by name (e.g. my-buildpack) or Git URL (e.g. 'https://github.com/cloudfoundry/java-buildpack.git') or Git URL with a branch or tag (e.g. 'https://github.com/cloudfoundry/java-buildpack.git#v3.3.0' for 'v3.3.0' tag). To use built-in buildpacks only, specify 'default' or 'null'"
+complete -c cf -a v3-push -f -s p -d "Path to app directory or to a zip file of the contents of the app directory"
 # Long options
-complete -c cf -a v3-push -l docker-image -d "Docker image to use (e.g. user/docker-image-name)"
-complete -c cf -a v3-push -l docker-username -d "Repository username; used with password from environment variable CF_DOCKER_PASSWORD"
-complete -c cf -a v3-push -l no-route -d "Do not map a route to this app"
-complete -c cf -a v3-push -l no-start -d "Do not stage and start the app after pushing"
+complete -c cf -f -a v3-push -l docker-image -d "Docker image to use (e.g. user/docker-image-name)"
+complete -c cf -f -a v3-push -l docker-username -d "Repository username; used with password from environment variable CF_DOCKER_PASSWORD"
+complete -c cf -f -a v3-push -l no-route -d "Do not map a route to this app"
+complete -c cf -f -a v3-push -l no-start -d "Do not stage and start the app after pushing"
 # Abbreviated long options
-complete -c cf -a push -a v3-push -s o -d "Docker image to use (e.g. user/docker-image-name)"
+complete -c cf -f -a push -a v3-push -s o -d "Docker image to use (e.g. user/docker-image-name)"
 
 # Command: v3-scale
 # Short options
-complete -c cf -a v3-scale -s f -d "Force restart of app without prompt"
-complete -c cf -a v3-scale -s i -d "Number of instances"
-complete -c cf -a v3-scale -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
-complete -c cf -a v3-scale -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a v3-scale -f -s f -d "Force restart of app without prompt"
+complete -c cf -a v3-scale -f -s i -d "Number of instances"
+complete -c cf -a v3-scale -f -s k -d "Disk limit (e.g. 256M, 1024M, 1G)"
+complete -c cf -a v3-scale -f -s m -d "Memory limit (e.g. 256M, 1024M, 1G)"
 # Long options
-complete -c cf -a v3-scale -l process -d "App process to scale (Default: web)"
+complete -c cf -f -a v3-scale -l process -d "App process to scale (Default: web)"
 # Abbreviated long options
 
 # Command: v3-delete
 # Short options
-complete -c cf -a v3-delete -s f -d "Force deletion without confirmation"
+complete -c cf -a v3-delete -f -s f -d "Force deletion without confirmation"
 # Long options
 # Abbreviated long options
 
@@ -1309,13 +1309,13 @@ complete -c cf -a v3-delete -s f -d "Force deletion without confirmation"
 # Command: v3-stage
 # Short options
 # Long options
-complete -c cf -a v3-stage -l package-guid -d "The guid of the package to stage"
+complete -c cf -f -a v3-stage -l package-guid -d "The guid of the package to stage"
 # Abbreviated long options
 
 # Command: v3-restart-app-instance
 # Short options
 # Long options
-complete -c cf -a v3-restart-app-instance -l process -d "Process to restart (Default: web)"
+complete -c cf -f -a v3-restart-app-instance -l process -d "Process to restart (Default: web)"
 # Abbreviated long options
 
 # Command: v3-droplets
@@ -1326,9 +1326,9 @@ complete -c cf -a v3-restart-app-instance -l process -d "Process to restart (Def
 # Command: v3-set-droplet
 # Short options
 # Long options
-complete -c cf -a v3-set-droplet -l droplet-guid -d "The guid of the droplet to use"
+complete -c cf -f -a v3-set-droplet -l droplet-guid -d "The guid of the droplet to use"
 # Abbreviated long options
-complete -c cf -a push -a v3-set-droplet -s d -d "The guid of the droplet to use"
+complete -c cf -f -a push -a v3-set-droplet -s d -d "The guid of the droplet to use"
 
 # Command: v3-set-env
 # Short options
@@ -1348,8 +1348,8 @@ complete -c cf -a push -a v3-set-droplet -s d -d "The guid of the droplet to use
 # Command: v3-set-health-check
 # Short options
 # Long options
-complete -c cf -a v3-set-health-check -l endpoint -d "Path on the app (Default: /)"
-complete -c cf -a v3-set-health-check -l process -d "App process to update (Default: web)"
+complete -c cf -f -a v3-set-health-check -l endpoint -d "Path on the app (Default: /)"
+complete -c cf -f -a v3-set-health-check -l process -d "App process to update (Default: web)"
 # Abbreviated long options
 
 # Command: v3-packages
@@ -1359,9 +1359,9 @@ complete -c cf -a v3-set-health-check -l process -d "App process to update (Defa
 
 # Command: v3-create-package
 # Short options
-complete -c cf -a v3-create-package -s p -d "Path to app directory or to a zip file of the contents of the app directory"
+complete -c cf -a v3-create-package -f -s p -d "Path to app directory or to a zip file of the contents of the app directory"
 # Long options
-complete -c cf -a v3-create-package -l docker-image -d "Docker image to use (e.g. user/docker-image-name)"
+complete -c cf -f -a v3-create-package -l docker-image -d "Docker image to use (e.g. user/docker-image-name)"
 # Abbreviated long options
-complete -c cf -a push -a v3-create-package -s o -d "Docker image to use (e.g. user/docker-image-name)"
+complete -c cf -f -a push -a v3-create-package -s o -d "Docker image to use (e.g. user/docker-image-name)"
 
